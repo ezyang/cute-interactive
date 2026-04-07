@@ -10,7 +10,8 @@ Generate executable Jupyter notebooks (one per section) illustrating examples fr
 - **Don't jump ahead**: Only include code for concepts introduced in the current section. If the paper poses a question that will be answered later, leave it as prose.
 - **Concrete parameters**: When the paper uses symbolic constants (like `p, q`), pick concrete non-trivial values (avoid 1) so strides are visibly distinct.
 - **Naming**: `ch{X}_{Y}_{short_name}.ipynb` e.g. `ch1_2_canonical_loops.ipynb`
-- **Visualization**: Use only `tensor-layouts` viz (`draw_layout`/`show_layout`) for all diagrams — never matplotlib directly. Use `colorize=True` and `color_layout` to customize coloring (e.g., grouping pairs of physical elements). When the paper shows physical data, visualize it as a 1D layout alongside the logical views.
+- **Visualization**: Use only `tensor-layouts` viz (`draw_layout`/`draw_slice`) for all diagrams — never matplotlib directly. Use `colorize=True` and `color_layout` to customize coloring (e.g., grouping pairs of physical elements). When the paper shows physical data, visualize it as a 1D layout alongside the logical views.
+- **Example Code**: A lot of the code initially generated was not making good use of the `tensor-layouts` library.  The examples have been fixed manually by a human.  If you modify them, be certain to use the library properly and idiomatically.
 
 ## Environment
 - Python venv at `.venv/` (managed by `uv`; invoke as `uv pip install --python .venv/bin/python <pkg>`)
